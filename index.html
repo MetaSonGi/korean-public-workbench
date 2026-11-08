@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공공·법률 워크벤치</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>공공·법률 워크벤치</h1>
+  <p class="sub">9개 분야 공식 자료 바로가기 · 준비 체크리스트 · 문서 초안 작성. 입력한 내용은 서버로 보내지 않고 이 브라우저에만 저장됩니다.</p>
+  <p class="warn">이 도구가 만드는 문서는 <b>초안</b>이며 법률 자문이 아닙니다. 제출 전 공식 기관 안내를 확인하고, 필요하면 대한법률구조공단(☎ 132) 등에서 상담받으세요.</p>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" data-tab="fields">분야별 자료·체크리스트</button>
+  <button role="tab" aria-selected="false" data-tab="drafts">문서 초안</button>
+</nav>
+
+<section id="tab-fields">
+  <input id="q" type="search" placeholder="분야·기관·할 일 검색 (예: 임금, 환불, 열람)" aria-label="검색">
+  <div id="fields" class="grid"></div>
+</section>
+
+<section id="tab-drafts" hidden>
+  <div class="draft-layout">
+    <form id="draftForm" class="form" autocomplete="off">
+      <label>문서 종류 <select id="type"></select></label>
+      <p id="lawRef" class="muted"></p>
+      <div id="inputs"></div>
+      <div class="row">
+        <button type="submit" class="primary">초안 만들기</button>
+        <button type="button" id="clearBtn">입력 지우기</button>
+      </div>
+      <ul id="errors" class="errors" role="alert"></ul>
+    </form>
+    <div class="out">
+      <textarea id="output" spellcheck="false" aria-label="초안 결과" placeholder="왼쪽 항목을 채우고 '초안 만들기'를 누르세요"></textarea>
+      <div class="row">
+        <button id="copyBtn">복사</button>
+        <button id="saveBtn">.txt 저장</button>
+        <button id="printBtn">인쇄</button>
+        <span id="outMsg" class="muted" role="status"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="data.js"></script>
+<script src="drafts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
